@@ -9,21 +9,24 @@
     <string name="security_patch">Security Patch</string>
 
     <string name="device">Device</string>
-    <string name="device_brand">Device Brand</string>
-    <string name="device_manufacturer">Device Manufacturer</string>
-    <string name="device_model">Device Model</string>
-    <string name="device_hardware">Device Hardware</string>
-    <string name="device_product">Device Product</string>
-    <string name="device_board">Device Board</string>
+    <string name="device_brand">Brand</string>
+    <string name="device_manufacturer">Manufacturer</string>
+    <string name="device_model">Model</string>
+    <string name="device_hardware">Hardware</string>
+    <string name="device_product">Product</string>
+    <string name="device_board">Board</string>
 
     <string name="abis">ABIs</string>
     <string name="abis_32">ABIs (32bit)</string>
     <string name="abis_64">ABIs (64bit)</string>
     <string name="build_id">Build ID</string>
 
-    <string name="screen_width">Screen Width</string>
-    <string name="screen_height">Screen Height</string>
-    <string name="screen_density">Screen Density</string>
+    <string name="display_width">Width</string>
+    <string name="display_height">Height</string>
+    <string name="display_density">Density</string>
 
     <string name="copied">Copied</string>
+    <string name="tab_device">Device</string>
+    <string name="tab_display">Display</string>
+    <string name="tab_os">OS</string>
 </resources>
