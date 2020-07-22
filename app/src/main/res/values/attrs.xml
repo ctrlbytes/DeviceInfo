@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="toolbarBackgroundColor" format="reference|color" />
+    <attr name="activityBackgroundColor" format="reference|color"/>
+    <attr name="cardViewBackgroundColor" format="reference|color" />
+</resources>

@@ -1,3 +1,5 @@
 <resources>
 
+    <dimen name="card_spacing">8dp</dimen>
+    <dimen name="app_bar_elevation">2dp</dimen>
 </resources>
