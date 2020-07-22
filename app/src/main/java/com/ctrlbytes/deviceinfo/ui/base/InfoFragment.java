@@ -58,7 +58,7 @@ public abstract class InfoFragment extends Fragment {
     }
 
     protected void add(@StringRes int title, String value) {
-        if (value.isEmpty()) return;
+        if (value.isEmpty()) value = getString(R.string.unknown);
         mInfoItemAdapter.add(new InfoItem(title, value));
     }
 

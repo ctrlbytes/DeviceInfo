@@ -22,11 +22,18 @@
     <string name="build_id">Build ID</string>
 
     <string name="display_width">Width</string>
+    <string name="display_width_dp">Width (dp)</string>
     <string name="display_height">Height</string>
+    <string name="display_height_dp">Height (dp)</string>
     <string name="display_density">Density</string>
+    <string name="display_density_dpi">Density (Dpi)</string>
 
     <string name="copied">Copied</string>
     <string name="tab_device">Device</string>
     <string name="tab_display">Display</string>
     <string name="tab_os">OS</string>
+    <string name="unknown">Unknown</string>
+    <string name="device_bootloader">Bootloader</string>
+    <string name="device_serial">Serial</string>
+    <string name="device_host">Host</string>
 </resources>

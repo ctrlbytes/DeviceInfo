@@ -16,16 +16,11 @@ public class DisplayFragment extends InfoFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        add(R.string.display_width,
-                String.format(Locale.getDefault(),
-                        "%d (%sdp)",
-                        displayMetrics.widthPixels,
-                        (int) displayMetrics.widthPixels / displayMetrics.density));
-        add(R.string.display_width,
-                String.format(Locale.getDefault(),
-                        "%d (%sdp)",
-                        displayMetrics.heightPixels,
-                        (int) displayMetrics.heightPixels / displayMetrics.density));
-        add(R.string.display_density, String.format(Locale.getDefault(), "%s(%ddp)", displayMetrics.density, displayMetrics.densityDpi));
+        add(R.string.display_width, String.valueOf(displayMetrics.widthPixels));
+        add(R.string.display_height, String.valueOf(displayMetrics.heightPixels));
+        add(R.string.display_width_dp, String.format(Locale.getDefault(), "%ddp", (int) (displayMetrics.widthPixels / displayMetrics.density)));
+        add(R.string.display_height_dp, String.format(Locale.getDefault(), "%ddp", (int) (displayMetrics.heightPixels / displayMetrics.density)));
+        add(R.string.display_density, String.valueOf(displayMetrics.density));
+        add(R.string.display_density_dpi, String.format(Locale.getDefault(), "%ddp", displayMetrics.densityDpi));
     }
 }
