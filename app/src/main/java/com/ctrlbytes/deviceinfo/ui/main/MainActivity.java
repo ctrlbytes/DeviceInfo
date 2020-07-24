@@ -36,6 +36,7 @@ import com.ctrlbytes.deviceinfo.ui.main.pages.DeviceFragment;
 import com.ctrlbytes.deviceinfo.ui.main.pages.DisplayFragment;
 import com.ctrlbytes.deviceinfo.ui.main.pages.FeaturesFragment;
 import com.ctrlbytes.deviceinfo.ui.main.pages.OSFragment;
+import com.ctrlbytes.deviceinfo.ui.main.pages.SensorsFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.lang.ref.WeakReference;
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void loadPages(){
+    private void loadPages() {
         mInfoPagesAdapter = new InfoPagesAdapter(this);
         viewPager.setAdapter(mInfoPagesAdapter);
         tabs.setupWithViewPager(viewPager);
@@ -124,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
                     return new OSFragment();
                 case 3:
                     return new FeaturesFragment();
+                case 4:
+                    return new SensorsFragment();
                 default:
                     throw new NullPointerException();
             }
@@ -131,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 4;
+            return 5;
         }
 
         @Nullable
@@ -150,6 +153,8 @@ public class MainActivity extends AppCompatActivity {
                     return R.string.tab_os;
                 case 3:
                     return R.string.tab_features;
+                case 4:
+                    return R.string.tab_sensors;
                 default:
                     throw new NullPointerException();
             }

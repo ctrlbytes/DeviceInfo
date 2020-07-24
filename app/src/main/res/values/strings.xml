@@ -27,11 +27,17 @@
     <string name="app_name">DeviceInfo</string>
     <string name="action_settings">Settings</string>
 
-    <string name="sdk_version">Android SDK Version</string>
-    <string name="locale">Locale</string>
+    <string name="tab_features">Features</string>
+    <string name="tab_sensors">Sensors</string>
+    <string name="tab_device">Device</string>
+    <string name="tab_display">Display</string>
+    <string name="tab_os">OS</string>
 
-    <string name="base_os">Base OS</string>
-    <string name="security_patch">Security Patch</string>
+    <string name="unknown">Unknown</string>
+    <string name="available">Available</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="not_supported">Not Supported</string>
+    <string name="copied">Copied</string>
 
     <string name="device">Device</string>
     <string name="device_brand">Brand</string>
@@ -40,7 +46,14 @@
     <string name="device_hardware">Hardware</string>
     <string name="device_product">Product</string>
     <string name="device_board">Board</string>
-
+    <string name="device_bootloader">Bootloader</string>
+    <string name="device_serial">Serial</string>
+    <string name="device_host">Host</string>
+    
+    <string name="sdk_version">Android SDK Version</string>
+    <string name="locale">Locale</string>
+    <string name="base_os">Base OS</string>
+    <string name="security_patch">Security Patch</string>
     <string name="abis">ABIs</string>
     <string name="abis_32">ABIs (32bit)</string>
     <string name="abis_64">ABIs (64bit)</string>
@@ -53,48 +66,57 @@
     <string name="display_density">Density</string>
     <string name="display_density_dpi">Density (Dpi)</string>
 
-    <string name="copied">Copied</string>
-    <string name="tab_device">Device</string>
-    <string name="tab_display">Display</string>
-    <string name="tab_os">OS</string>
-    <string name="unknown">Unknown</string>
-    <string name="device_bootloader">Bootloader</string>
-    <string name="device_serial">Serial</string>
-    <string name="device_host">Host</string>
-    <string name="features_wifi_direct">Wifi-Direct</string>
-    <string name="available">Available</string>
-    <string name="unavailable">Unavailable</string>
     <string name="features_wifi">Wifi</string>
+    <string name="features_wifi_direct">Wifi-Direct</string>
     <string name="features_wifi_aware">Wifi Aware</string>
     <string name="features_wifi_passpoint">Wifi Passpoint</string>
     <string name="features_bluetooth">Bluetooth</string>
-    <string name="features_bluetooth_le">Bluetooh LE</string>
+    <string name="features_bluetooth_le">Bluetooth LE</string>
     <string name="features_camera">Camera</string>
-    <string name="features_camera_autofocus">Camera Autofocus</string>
+    <string name="features_audio_output">Audio Output</string>
+    <string name="features_camera_autofocus">Camera Auto-focus</string>
     <string name="features_camera_external">Camera External</string>
     <string name="features_camera_flash">Camera Flash</string>
     <string name="features_camera_level">Camera Level Support</string>
     <string name="features_camera_ar">Camera AR (Motion Tracking)</string>
-    <string name="feature_consumer_ir">IR Support</string>
-    <string name="feature_location">Location</string>
-    <string name="feature_location_gps">Location by GPS</string>
-    <string name="feature_location_network">Location by Internet</string>
-    <string name="feature_microphone">Microphone</string>
-    <string name="feature_nfc">NFC</string>
-    <string name="feature_nfc_beam">NFC Beam</string>
-    <string name="feature_usb_accesseries">USB Accessory</string>
-    <string name="feature_usb_host">USB Host</string>
-    <string name="feature_print">Print Support</string>
-    <string name="feature_pip">PIP (Picture-in-Picture)</string>
-    <string name="feature_ethernet">Ethernet</string>
-    <string name="feature_midi">MIDI</string>
-    <string name="feature_gamepad">Gamepad</string>
-
-    <string name="tab_features">Features</string>
-    <string name="not_supported">Not Supoorted</string>
-
-    <string name="features_audio_output">Audio Output</string>
+    <string name="features_consumer_ir">IR Support</string>
+    <string name="features_location">Location</string>
+    <string name="features_location_gps">Location by GPS</string>
+    <string name="features_location_network">Location by Internet</string>
     <string name="features_audio_low_latency">Audio Low Latency</string>
     <string name="features_audio_pro">Audio PRO</string>
     <string name="features_camera_front">Camera Front</string>
+    <string name="features_microphone">Microphone</string>
+    <string name="features_nfc">NFC</string>
+    <string name="features_nfc_beam">NFC Beam</string>
+    <string name="features_usb_accessories">USB Accessory</string>
+    <string name="features_usb_host">USB Host</string>
+    <string name="features_print">Print Support</string>
+    <string name="features_pip">PIP (Picture-in-Picture)</string>
+    <string name="features_ethernet">Ethernet</string>
+    <string name="features_midi">MIDI</string>
+    <string name="features_gamepad">Gamepad</string>
+    <string name="sensors_touch">Touch</string>
+    <string name="sensors_touch_multi">MultiTouch Support</string>
+    <string name="sensors_iris">Iris</string>
+    <string name="sensors_face">Face</string>
+    <string name="sensors_fake_touch">Fake Touch</string>
+    <string name="sensors_fingerprint">Fingerprint</string>
+    <string name="sensors_voice_recognizers">Voice Recognizers</string>
+    <string name="sensors_accelerometer">Accelerometer</string>
+    <string name="sensors_barometer">Barometer</string>
+    <string name="sensors_compass">Compass</string>
+    <string name="sensors_gyroscope">Gyroscope</string>
+    <string name="sensors_light">Light</string>
+    <string name="sensors_proximity">Proximity</string>
+    <string name="sensors_stepcounter">Step Counter</string>
+    <string name="sensors_stepdetector">Step Detector</string>
+    <string name="sensors_heartrate">Heartrate</string>
+    <string name="sensors_heartrate_ecg">Heartrate ECG</string>
+    <string name="sensors_relative_humidity">Relative Humidity</string>
+    <string name="sensors_ambient_temperature">Ambient Temperature</string>
+    <string name="sensors_hifi_sensors">Hifi Sensors</string>
+    <string name="os_android_version">Android Version</string>
+    <string name="os_android_flavor">Android Flavor</string>
+
 </resources>

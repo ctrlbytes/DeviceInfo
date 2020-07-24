@@ -100,29 +100,29 @@ public class FeaturesFragment extends InfoFragment {
         add(R.string.features_camera_level, checkFeature(FEATURE_CAMERA_LEVEL_FULL));
         add(R.string.features_camera_ar, SDK_INT >= P ? checkFeature(FEATURE_CAMERA_AR) : R.string.not_supported);
 
-        add(R.string.feature_consumer_ir, checkFeature(FEATURE_CONSUMER_IR));
+        add(R.string.features_consumer_ir, checkFeature(FEATURE_CONSUMER_IR));
 
-        add(R.string.feature_location, checkFeature(FEATURE_LOCATION));
-        add(R.string.feature_location_gps, checkFeature(FEATURE_LOCATION_GPS));
-        add(R.string.feature_location_network, checkFeature(FEATURE_LOCATION_NETWORK));
+        add(R.string.features_location, checkFeature(FEATURE_LOCATION));
+        add(R.string.features_location_gps, checkFeature(FEATURE_LOCATION_GPS));
+        add(R.string.features_location_network, checkFeature(FEATURE_LOCATION_NETWORK));
 
         add(R.string.features_audio_output, checkFeature(FEATURE_AUDIO_OUTPUT));
         add(R.string.features_audio_low_latency, checkFeature(FEATURE_AUDIO_LOW_LATENCY));
         add(R.string.features_audio_pro, SDK_INT >= M ? checkFeature(FEATURE_AUDIO_PRO) : R.string.not_supported);
-        add(R.string.feature_microphone, checkFeature(FEATURE_MICROPHONE));
+        add(R.string.features_microphone, checkFeature(FEATURE_MICROPHONE));
 
-        add(R.string.feature_nfc, checkFeature(FEATURE_NFC));
-        add(R.string.feature_nfc_beam, SDK_INT >= Q ? checkFeature(FEATURE_NFC_BEAM) : R.string.not_supported);
+        add(R.string.features_nfc, checkFeature(FEATURE_NFC));
+        add(R.string.features_nfc_beam, SDK_INT >= Q ? checkFeature(FEATURE_NFC_BEAM) : R.string.not_supported);
 
-        add(R.string.feature_usb_host, checkFeature(FEATURE_USB_HOST));
-        add(R.string.feature_usb_accesseries, checkFeature(FEATURE_USB_ACCESSORY));
+        add(R.string.features_usb_host, checkFeature(FEATURE_USB_HOST));
+        add(R.string.features_usb_accessories, checkFeature(FEATURE_USB_ACCESSORY));
 
-        add(R.string.feature_print, checkFeature(FEATURE_PRINTING));
-        add(R.string.feature_pip, SDK_INT >= N ? checkFeature(FEATURE_PICTURE_IN_PICTURE) : R.string.not_supported);
-        add(R.string.feature_ethernet, SDK_INT >= N ? checkFeature(FEATURE_ETHERNET) : R.string.not_supported);
-        add(R.string.feature_midi, SDK_INT >= M ? checkFeature(FEATURE_MIDI) : R.string.not_supported);
+        add(R.string.features_print, checkFeature(FEATURE_PRINTING));
+        add(R.string.features_pip, SDK_INT >= N ? checkFeature(FEATURE_PICTURE_IN_PICTURE) : R.string.not_supported);
+        add(R.string.features_ethernet, SDK_INT >= N ? checkFeature(FEATURE_ETHERNET) : R.string.not_supported);
+        add(R.string.features_midi, SDK_INT >= M ? checkFeature(FEATURE_MIDI) : R.string.not_supported);
 
-        add(R.string.feature_gamepad, checkFeature(FEATURE_GAMEPAD));
+        add(R.string.features_gamepad, checkFeature(FEATURE_GAMEPAD));
 
         FeatureInfo[] features = mPackageManager.getSystemAvailableFeatures();
         for (FeatureInfo info : features) {
