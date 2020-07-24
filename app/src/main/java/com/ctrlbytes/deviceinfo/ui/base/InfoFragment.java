@@ -1,3 +1,28 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2020 CtrlBytes Technologies
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ */
+
 package com.ctrlbytes.deviceinfo.ui.base;
 
 import android.content.ClipData;
@@ -9,11 +34,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ctrlbytes.codekit.ui.recyclerview.RViewAdapter;
+import com.ctrlbytes.codekit.ui.recyclerview.RViewHolder;
 import com.ctrlbytes.deviceinfo.R;
 import com.ctrlbytes.deviceinfo.data.InfoItem;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -62,50 +86,34 @@ public abstract class InfoFragment extends Fragment {
         mInfoItemAdapter.add(new InfoItem(title, value));
     }
 
-    public static class InfoItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-        List<InfoItem> mInfoItems = new ArrayList<>();
-
-        public void add(InfoItem item) {
-            mInfoItems.add(item);
-            notifyItemInserted(mInfoItems.size() - 1);
-        }
+    public static class InfoItemAdapter extends RViewAdapter<InfoItem, InfoItemAdapter.InfoItemView> {
 
         @NonNull
         @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new InfoItemView(LayoutInflater.from(parent.getContext()).inflate(R.layout.info_listitem, parent, false));
+        public InfoItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new InfoItemView(parent, R.layout.info_listitem, this);
         }
 
-        @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            ((InfoItemView) holder).bind(mInfoItems.get(position));
-        }
-
-        @Override
-        public int getItemCount() {
-            return mInfoItems.size();
-        }
-
-        public static class InfoItemView extends RecyclerView.ViewHolder {
+        public static class InfoItemView extends RViewHolder<InfoItem> {
 
             @BindView(R.id.tv_info_title)
             TextView tvInfoTitle;
             @BindView(R.id.tv_info_value)
             TextView tvInfoValue;
 
-            public InfoItemView(@NonNull View itemView) {
-                super(itemView);
+            public InfoItemView(ViewGroup parent, int resId, Callback callback) {
+                super(parent, resId, callback);
                 ButterKnife.bind(this, itemView);
             }
 
-            public void bind(InfoItem infoItem) {
-                tvInfoTitle.setText(infoItem.getTitle());
-                tvInfoValue.setText(infoItem.getValue());
+            @Override
+            public void onBind(InfoItem item) {
+                tvInfoTitle.setText(item.getTitle());
+                tvInfoValue.setText(item.getValue());
                 itemView.setOnClickListener(v -> {
                     ClipboardManager clipboard = (ClipboardManager) itemView.getContext().getSystemService(CLIPBOARD_SERVICE);
                     if (clipboard != null) {
-                        ClipData clip = ClipData.newPlainText("label", infoItem.getValue());
+                        ClipData clip = ClipData.newPlainText("label", item.getValue());
                         clipboard.setPrimaryClip(clip);
                         Toast.makeText(v.getContext(), R.string.copied, Toast.LENGTH_SHORT).show();
                     }
