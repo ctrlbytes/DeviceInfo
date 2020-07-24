@@ -40,15 +40,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
+        android:textColor="?android:textColorPrimary"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:title="SDK Version" />
+        tools:text="SDK Version" />
 
     <TextView
         android:id="@+id/tv_info_value"
+        android:textSize="14sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textColor="?android:textColorSecondary"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        tools:title="29" />
+        tools:text="29" />
 
 </LinearLayout>

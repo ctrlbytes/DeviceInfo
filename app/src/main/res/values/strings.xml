@@ -73,7 +73,7 @@
     <string name="features_camera_autofocus">Camera Autofocus</string>
     <string name="features_camera_external">Camera External</string>
     <string name="features_camera_flash">Camera Flash</string>
-    <string name="features_camera_level">Camera Supports Level</string>
+    <string name="features_camera_level">Camera Level Support</string>
     <string name="features_camera_ar">Camera AR (Motion Tracking)</string>
     <string name="feature_consumer_ir">IR Support</string>
     <string name="feature_location">Location</string>
@@ -89,5 +89,12 @@
     <string name="feature_ethernet">Ethernet</string>
     <string name="feature_midi">MIDI</string>
     <string name="feature_gamepad">Gamepad</string>
+
     <string name="tab_features">Features</string>
+    <string name="not_supported">Not Supoorted</string>
+
+    <string name="features_audio_output">Audio Output</string>
+    <string name="features_audio_low_latency">Audio Low Latency</string>
+    <string name="features_audio_pro">Audio PRO</string>
+    <string name="features_camera_front">Camera Front</string>
 </resources>
