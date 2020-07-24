@@ -86,6 +86,11 @@ public abstract class InfoFragment extends Fragment {
         mInfoItemAdapter.add(new InfoItem(title, value));
     }
 
+    protected void add(@StringRes int title, int value) {
+        mInfoItemAdapter.add(new InfoItem(title, getString(value)));
+    }
+
+
     public static class InfoItemAdapter extends RViewAdapter<InfoItem, InfoItemAdapter.InfoItemView> {
 
         @NonNull

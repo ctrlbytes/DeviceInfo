@@ -34,6 +34,7 @@ import android.view.MenuItem;
 import com.ctrlbytes.deviceinfo.R;
 import com.ctrlbytes.deviceinfo.ui.main.pages.DeviceFragment;
 import com.ctrlbytes.deviceinfo.ui.main.pages.DisplayFragment;
+import com.ctrlbytes.deviceinfo.ui.main.pages.FeaturesFragment;
 import com.ctrlbytes.deviceinfo.ui.main.pages.OSFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -121,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
                     return new DisplayFragment();
                 case 2:
                     return new OSFragment();
+                case 3:
+                    return new FeaturesFragment();
                 default:
                     throw new NullPointerException();
             }
@@ -128,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         @Nullable
@@ -145,6 +148,8 @@ public class MainActivity extends AppCompatActivity {
                     return R.string.tab_display;
                 case 2:
                     return R.string.tab_os;
+                case 3:
+                    return R.string.tab_features;
                 default:
                     throw new NullPointerException();
             }
