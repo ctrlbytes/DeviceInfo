@@ -36,6 +36,7 @@ import android.widget.Toast;
 
 import com.ctrlbytes.codekit.ui.recyclerview.RViewAdapter;
 import com.ctrlbytes.codekit.ui.recyclerview.RViewHolder;
+import com.ctrlbytes.codekit.ui.recyclerview.RViewListener;
 import com.ctrlbytes.deviceinfo.R;
 import com.ctrlbytes.deviceinfo.data.InfoItem;
 
@@ -76,6 +77,22 @@ public abstract class InfoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
         mInfoItemAdapter = new InfoItemAdapter();
+        mInfoItemAdapter.setRViewListener(new RViewListener<InfoItem>() {
+            @Override
+            public void onItemClick(int position, InfoItem item, View mView) {
+
+            }
+
+            @Override
+            public void onItemLongClick(int position, InfoItem item, View mView) {
+                ClipboardManager clipboard = (ClipboardManager) requireContext().getSystemService(CLIPBOARD_SERVICE);
+                if (clipboard != null) {
+                    ClipData clip = ClipData.newPlainText("label", item.getValue());
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(requireContext(), R.string.copied, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         rvInfoList.setLayoutManager(new LinearLayoutManager(requireContext()));
         rvInfoList.setAdapter(mInfoItemAdapter);
         rvInfoList.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
@@ -89,7 +106,6 @@ public abstract class InfoFragment extends Fragment {
     protected void add(@StringRes int title, int value) {
         mInfoItemAdapter.add(new InfoItem(title, getString(value)));
     }
-
 
     public static class InfoItemAdapter extends RViewAdapter<InfoItem, InfoItemAdapter.InfoItemView> {
 
@@ -115,14 +131,6 @@ public abstract class InfoFragment extends Fragment {
             public void onBind(InfoItem item) {
                 tvInfoTitle.setText(item.getTitle());
                 tvInfoValue.setText(item.getValue());
-                itemView.setOnClickListener(v -> {
-                    ClipboardManager clipboard = (ClipboardManager) itemView.getContext().getSystemService(CLIPBOARD_SERVICE);
-                    if (clipboard != null) {
-                        ClipData clip = ClipData.newPlainText("label", item.getValue());
-                        clipboard.setPrimaryClip(clip);
-                        Toast.makeText(v.getContext(), R.string.copied, Toast.LENGTH_SHORT).show();
-                    }
-                });
             }
         }
     }
