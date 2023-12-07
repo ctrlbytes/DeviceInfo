@@ -22,21 +22,23 @@
  * SOFTWARE.
  *
  */
-package com.ctrlbytes.deviceinfo
+package com.ctrlbytes.deviceinfo.ui.main.pages
 
-import android.app.Application
+import android.os.Bundle
+import android.view.View
+import com.ctrlbytes.deviceinfo.R
+import com.ctrlbytes.deviceinfo.ui.base.InfoFragment
+import java.util.Locale
 
-/**
- * Created by Lakshmi Sankar on 13-01-2018.
- */
-class App : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        instance = this
-    }
-
-    companion object {
-        var instance: App? = null
-            private set
+class DisplayFragment : InfoFragment() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val displayMetrics = resources.displayMetrics
+        add(R.string.display_width, displayMetrics.widthPixels.toString())
+        add(R.string.display_height, displayMetrics.heightPixels.toString())
+        add(R.string.display_width_dp, String.format(Locale.getDefault(), "%ddp", (displayMetrics.widthPixels / displayMetrics.density).toInt()))
+        add(R.string.display_height_dp, String.format(Locale.getDefault(), "%ddp", (displayMetrics.heightPixels / displayMetrics.density).toInt()))
+        add(R.string.display_density, displayMetrics.density.toString())
+        add(R.string.display_density_dpi, String.format(Locale.getDefault(), "%ddp", displayMetrics.densityDpi))
     }
 }
