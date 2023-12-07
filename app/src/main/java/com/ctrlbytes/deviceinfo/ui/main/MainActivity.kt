@@ -28,14 +28,10 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentStatePagerAdapter
-import androidx.viewpager.widget.ViewPager
 import com.ctrlbytes.deviceinfo.R
 import com.ctrlbytes.deviceinfo.databinding.ActivityMainBinding
 import com.ctrlbytes.deviceinfo.ui.main.pages.DeviceFragment
@@ -43,7 +39,6 @@ import com.ctrlbytes.deviceinfo.ui.main.pages.DisplayFragment
 import com.ctrlbytes.deviceinfo.ui.main.pages.FeaturesFragment
 import com.ctrlbytes.deviceinfo.ui.main.pages.OSFragment
 import com.ctrlbytes.deviceinfo.ui.main.pages.SensorsFragment
-import com.google.android.material.tabs.TabLayout
 import java.lang.ref.WeakReference
 
 class MainActivity : AppCompatActivity() {
@@ -78,13 +73,6 @@ class MainActivity : AppCompatActivity() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         loadPages()
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        return if (id == R.id.action_settings) {
-            true
-        } else super.onOptionsItemSelected(item)
     }
 
     class InfoPagesAdapter(activity: MainActivity) : FragmentStatePagerAdapter(activity.supportFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
