@@ -24,15 +24,13 @@
  */
 package com.ctrlbytes.deviceinfo.ui.main.pages
 
-import android.Manifest.permission
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import androidx.core.app.ActivityCompat
 import com.ctrlbytes.deviceinfo.R
 import com.ctrlbytes.deviceinfo.ui.base.InfoFragment
 import java.util.Locale
+
 
 class DeviceFragment : InfoFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,13 +44,6 @@ class DeviceFragment : InfoFragment() {
         add(R.string.device_board, Build.BOARD)
         add(R.string.device_bootloader, Build.BOOTLOADER)
         add(R.string.device_host, Build.HOST)
-//        if (ActivityCompat.checkSelfPermission(requireContext(), permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                add(R.string.device_serial, Build.getSerial())
-//            } else {
-//                add(R.string.device_serial, Build.SERIAL)
-//            }
-//        }
         add(R.string.locale, Locale.getDefault().toString())
     }
 }
